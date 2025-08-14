@@ -1,32 +1,35 @@
-**Python Environment**
 
-It is a seperate and isolated environment for python projects.
+# Python Environment
 
-In the python environment we can manage dependencies, versions and packages without any conflicts across different python projects.
+A Python environment is a separate and isolated workspace for Python projects. It allows you to manage dependencies, versions, and packages without conflicts across different projects.
 
-For example we have two python projects: `project1` and `project2`. 
+## Why Use Python Environments?
 
-Where project1 uses the Fast API 1.4v and project2 uses the Fast API 2.0v. 
+Suppose you have two projects:
+- `project1` uses FastAPI 1.4
+- `project2` uses FastAPI 2.0
 
-And let suppose in your system Fast API 2.0v is installed. If you try to run project1, it may not work properly because it requires Fast API 1.4v.
+If FastAPI 2.0 is installed globally, `project1` may not work properly because it requires FastAPI 1.4. By using virtual environments, each project can have its own set of installed packages and dependencies, independent of what’s installed globally or in other environments.
 
-By using the python environment we can run these projects seperately without conflicting each other.
+## Benefits
 
-Virtual environment solved this issue by allowing each project to have its own set of installed packages and dependencies independednt of what installed globally or in other environments.
+- Isolates project dependencies
+- Prevents version conflicts
+- Simplifies package management
 
+## Steps to Create a Python Environment (Windows)
 
-**Steps for Creating Python Environment (Windows)**
-1. Go to your vs code terminal
-```bash
-python -m venv enviornment_name
-```
-
-2. After creating the python environment activate it using the following command:
-```bash
-enviornment_name/bin/activate
-```
-
-and similarly you can use below command to deactivate the environment:
-```bash
-deactivate
-```
+1. **Open your VS Code terminal.**
+2. **Create a new environment:**
+	```powershell
+	python -m venv environment_name
+	```
+3. **Activate the environment:**
+	```powershell
+	.\environment_name\Scripts\Activate.ps1
+	```
+	*(For Command Prompt, use: `environment_name\Scripts\activate.bat`)*
+4. **Deactivate the environment:**
+	```powershell
+	deactivate
+	```
